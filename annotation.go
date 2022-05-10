@@ -1,4 +1,4 @@
-package gopdfutils
+package pdfutils
 
 const (
 	Highlight   string = "highlight"
