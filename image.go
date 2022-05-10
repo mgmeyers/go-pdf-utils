@@ -26,7 +26,7 @@ type ImageAnnotArgs struct {
 	AttemptOCR      bool
 	ImageOutputPath string
 	ImageBaseName   string
-	ImageBaseFormat string
+	ImageFormat     string
 	ImageQuality    int
 	TessPath        string
 	TessLang        string
@@ -72,7 +72,7 @@ func HandleImageAnnot(args ImageAnnotArgs) (*Annotation, error) {
 		args.PageIndex+1,
 		int(annotRect[0]),
 		int(annotRect[1]),
-		args.ImageBaseFormat,
+		args.ImageFormat,
 	)
 
 	if args.Write {
@@ -93,7 +93,7 @@ func HandleImageAnnot(args ImageAnnotArgs) (*Annotation, error) {
 		if err := WriteImage(
 			&cropped,
 			imagePath,
-			args.ImageBaseFormat,
+			args.ImageFormat,
 			args.ImageQuality,
 		); err != nil {
 			return nil, err
