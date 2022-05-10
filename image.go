@@ -103,7 +103,7 @@ func HandleImageAnnot(args ImageAnnotArgs) (*Annotation, error) {
 	comment := ""
 
 	if args.Annotation.Contents != nil {
-		comment = removeNul(args.Annotation.Contents.String())
+		comment = RemoveNul(args.Annotation.Contents.String())
 	}
 
 	builtAnnot := &Annotation{

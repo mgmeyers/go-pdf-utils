@@ -60,7 +60,7 @@ func GetAnnotationType(t interface{}) string {
 	}
 }
 
-func removeNul(str string) string {
+func RemoveNul(str string) string {
 	return strings.Map(func(r rune) rune {
 		if r == unicode.ReplacementChar {
 			return -1
